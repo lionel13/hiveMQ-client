@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>fr.varex13</groupId>
+    <artifactId>HiveMQ-client</artifactId>
+    <version>1.0.0.0-SNAPSHOT</version>
+
+    <name>HiveMQ-client</name>
+    <description>HiveMQ-client</description>
+    <packaging>pom</packaging>
+
+
+    <properties>
+        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <org.apache.commons.commons-lang3>3.12.0</org.apache.commons.commons-lang3>
+        <org.reflections.reflections>0.10.2</org.reflections.reflections>
+        <com.fasterxml.jackson.core>2.13.1</com.fasterxml.jackson.core>
+        <com.hivemq.hivemq-mqtt-client>1.3.0</com.hivemq.hivemq-mqtt-client>
+    </properties>
+    
+    <modules>
+        <module>mqtt-socle</module>
+        <module>utils</module>
+        <module>mqtt-test-app</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${org.apache.commons.commons-lang3}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.reflections</groupId>
+                <artifactId>reflections</artifactId>
+                <version>${org.reflections.reflections}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${com.fasterxml.jackson.core}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-xml</artifactId>
+                <version>${com.fasterxml.jackson.core}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.hivemq</groupId>
+                <artifactId>hivemq-mqtt-client</artifactId>
+                <version>${com.hivemq.hivemq-mqtt-client}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
